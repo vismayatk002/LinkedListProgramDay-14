@@ -4,5 +4,6 @@ public interface ListOperation<T> {
 
 	void add(T data);
 	T get(int index);
+	T pop();
 	boolean isEmpty();
 }
