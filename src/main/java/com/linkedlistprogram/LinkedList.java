@@ -47,19 +47,39 @@ public class LinkedList<T> implements ListOperation<T> {
         }
         return temp.data;
     }
-    
     @Override
     public T pop() {
+    	  
+        if(isEmpty()){
+            System.out.println("Linked list is empty");
+            return null;
+        }
+        else{
+        	Node<T> temp = head; 
+        	head = head.next;
+        	return temp.data;
+        } 
+	}
+    
+    @Override
+    public T popLast() {
   
-            if(isEmpty()){
-                System.out.println("Linked list is empty");
-                return null;
-            }
-            else{
-            	Node<T> temp = head; 
-            	head = head.next;
-            	return temp.data;
-            } 
+        if(isEmpty()){
+            System.out.println("Linked list is empty");
+            return null;
+        }
+        else{
+        	Node<T> tmp = null;
+        	Node<T> temp = head;
+        	while(temp != tail) {
+        		
+        		tmp = temp;
+            	temp = temp.next;
+        	}
+        	tail = tmp;
+        	tail.next = null;
+            return temp.data;
+        } 
    	}
     
     @Override

@@ -13,5 +13,6 @@ public class LinkedListMain
         System.out.println("Linked List : " + list.get(0) + "->" + list.get(1) + "->" + list.get(2));
         System.out.println(list.pop());
         System.out.println("Linked List : " + list.get(0) + "->" + list.get(1));
-    }
+        System.out.println(list.popLast());
+     }
 }
