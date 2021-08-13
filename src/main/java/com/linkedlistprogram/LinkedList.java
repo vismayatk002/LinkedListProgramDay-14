@@ -3,7 +3,7 @@ package com.linkedlistprogram;
 public class LinkedList<T> implements ListOperation<T> {
 
 	//declare data and tail
-    Node<T> head;
+    Node<T> head,tail;
     int index = 0;
     int size = 0;
     //define a default constructor 
@@ -17,13 +17,12 @@ public class LinkedList<T> implements ListOperation<T> {
 
         if(head == null){
             //head and tail points to new node
-            head = new Node<T>(data);
+            head = tail = new Node<T>(data);
         }
         //currently tail.next is null then 
         else {
-        	Node<T> temp = new Node<T>(data);
-            temp.next = head;
-            head = temp; 
+        	tail.next = new Node<T>(data);
+            tail = tail.next; 
         }
         size++;
     }
