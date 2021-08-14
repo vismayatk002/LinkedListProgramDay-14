@@ -4,6 +4,8 @@ public class LinkedListMain
 {
     public static void main( String[] args )
     {
+    	
+    	
     	//creating object with DataType integer
         LinkedList<Integer> list = new LinkedList<>();
 
@@ -38,5 +40,18 @@ public class LinkedListMain
         }
         System.out.println("Size of Linked list : " + list.size());
         
+        // Sorted List    
+        
+        SortedLinkedList<Integer> sortedList = new SortedLinkedList<>();
+        sortedList.add(56);
+    	System.out.println("Linked List : " + sortedList.get(0));
+    	sortedList.add(30);
+    	System.out.println("Linked List : " + sortedList.get(0) + "->" + sortedList.get(1));
+    	sortedList.add(40);
+    	System.out.println("Linked List : " + sortedList.get(0) + "->" + sortedList.get(1) + "->" + sortedList.get(2));
+    	sortedList.add(70);
+    	System.out.println("Linked List : " + sortedList.get(0) + "->" + sortedList.get(1) + "->" + sortedList.get(2)+ "->" + sortedList.get(3));
+    	sortedList.add(35);
+    	System.out.println("Linked List : " + sortedList.get(0) + "->" + sortedList.get(1) + "->" + sortedList.get(2)+ "->" + sortedList.get(3)+ "->" + sortedList.get(4));
     }
 }
