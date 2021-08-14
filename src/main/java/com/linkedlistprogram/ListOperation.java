@@ -8,5 +8,5 @@ public interface ListOperation<T> {
 	T popLast();
 	boolean isEmpty();
 	void addInBetween(int index, T data);
-	boolean searchNode(T data);
+	int searchNode(T data);
 }

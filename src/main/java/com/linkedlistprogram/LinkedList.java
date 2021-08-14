@@ -83,15 +83,17 @@ public class LinkedList<T> implements ListOperation<T> {
    	}
     
     @Override
-    public boolean searchNode(T data) {
+    public int searchNode(T data) {
     	Node<T> temp = head;
+    	int i = 0;
     	while(temp != tail) {
     		if(temp.data == data) {
-    			return true;
+    			return i;
     		}
     		temp =temp.next;
+    		i++;
     	}
-    	return false;
+    	return -1;
     }
     
     @Override
