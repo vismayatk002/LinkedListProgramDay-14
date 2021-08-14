@@ -85,13 +85,13 @@ public class LinkedList<T> implements ListOperation<T> {
     @Override
     public int searchNode(T data) {
     	Node<T> temp = head;
-    	int i = 0;
+    	int index = 0;
     	while(temp != tail) {
     		if(temp.data == data) {
-    			return i;
+    			return index;
     		}
-    		temp =temp.next;
-    		i++;
+    		temp = temp.next;
+    		index++;
     	}
     	return -1;
     }
@@ -125,6 +125,48 @@ public class LinkedList<T> implements ListOperation<T> {
         }
     }
     
+    @Override
+    public void deleteInBetween(int index, T data){
+
+        if(index < 0 && index > size){
+
+            System.out.println("invalid index");
+            return;
+        }
+        else if(isEmpty()){
+            System.out.println("Linked list is empty");
+            
+        }
+        //declaration of temporary object
+        Node<T> currentNode = head;
+        Node<T> prevNode = null;
+        
+        while(currentNode != null && index != 0){
+        	prevNode = currentNode;
+        	currentNode = currentNode.next;
+            index--;
+        }
+        if(prevNode != null) {
+        	prevNode.next = currentNode.next;;
+        }
+    }
+    
+    @Override
+    public int size() {
+    	int size = 0;
+    	if(isEmpty()) {
+    		return size;
+    	}
+    	else {
+    		Node<T> temp = head;
+    		while(temp != null) {
+    			
+    			temp = temp.next;
+    			size++;
+    		}
+    		return size;
+    	}
+    }
     @Override
     public boolean isEmpty(){
         if(head == null){
