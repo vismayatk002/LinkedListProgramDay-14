@@ -83,6 +83,18 @@ public class LinkedList<T> implements ListOperation<T> {
    	}
     
     @Override
+    public boolean searchNode(T data) {
+    	Node<T> temp = head;
+    	while(temp != tail) {
+    		if(temp.data == data) {
+    			return true;
+    		}
+    		temp =temp.next;
+    	}
+    	return false;
+    }
+    
+    @Override
     public void addInBetween(int index, T data){
 
         if(index < 0 && index > size){
