@@ -83,6 +83,35 @@ public class LinkedList<T> implements ListOperation<T> {
    	}
     
     @Override
+    public void addInBetween(int index, T data){
+
+        if(index < 0 && index > size){
+
+            System.out.println("invalid index");
+            return;
+        }
+        else if(isEmpty()){
+            System.out.println("Linked list is empty");
+            
+        }
+        //declaration of temporary object
+        Node<T> currentNode = head;
+        Node<T> prevNode = null;
+        
+        while(currentNode != null && index != 0){
+        	prevNode = currentNode;
+        	currentNode = currentNode.next;
+            index--;
+        }
+        Node<T> newNode = new Node<T>(data);
+        newNode.next = currentNode;
+        currentNode = newNode;
+        if(prevNode != null) {
+        	prevNode.next = newNode;
+        }
+    }
+    
+    @Override
     public boolean isEmpty(){
         if(head == null){
             return true;

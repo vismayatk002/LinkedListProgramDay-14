@@ -7,4 +7,5 @@ public interface ListOperation<T> {
 	T pop();
 	T popLast();
 	boolean isEmpty();
+	void addInBetween(int index, T data);
 }
